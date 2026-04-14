@@ -1,4 +1,4 @@
-package test.java.academy.tochkavhoda.figures.v1;
+package academy.tochkavhoda.figures.v1;
 
 import org.junit.jupiter.api.Test;
 
@@ -94,7 +94,7 @@ public class TestRectangle {
                 () -> assertEquals(120, rect.getBottomRight().getX()),
                 () -> assertEquals(220, rect.getBottomRight().getY())
         );
-        rect.moveTo(new Point(1000, 2000));
+        rect.moveTo(1000, 2000);
         assertAll(
                 () -> assertEquals(1000, rect.getTopLeft().getX()),
                 () -> assertEquals(2000, rect.getTopLeft().getY()),

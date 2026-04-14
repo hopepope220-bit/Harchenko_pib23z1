@@ -1,4 +1,4 @@
-package main.java.academy.tochkavhoda.base;
+package academy.tochkavhoda.base;
 
 import java.util.Arrays;
 

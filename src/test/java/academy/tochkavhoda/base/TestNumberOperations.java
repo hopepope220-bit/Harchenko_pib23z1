@@ -1,4 +1,4 @@
-package test.java.academy.tochkavhoda.base;
+package academy.tochkavhoda.base;
 
 import org.junit.jupiter.api.Test;
 

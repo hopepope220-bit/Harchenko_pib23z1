@@ -1,14 +1,15 @@
-package main.java.academy.tochkavhoda.figures.v1;
+package academy.tochkavhoda.figures.v1;
+
+import academy.tochkavhoda.figures.v2.Figure;
+import academy.tochkavhoda.iface.v2.Stretchable;
 
 import java.util.Objects;
 
-public class Rectangle {
+public class Rectangle extends Figure implements Stretchable {
     private Point topLeft;
     private Point bottomRight;
 
     public Rectangle(Point leftTop, Point rightBottom) {
-//        this.topLeft = new Point(leftTop.getX(), leftTop.getY());
-//        this.bottomRight = new Point(rightBottom.getX(), rightBottom.getY());
         this(leftTop.getX(), leftTop.getY(), rightBottom.getX(), rightBottom.getY());
     }
 
@@ -18,13 +19,11 @@ public class Rectangle {
     }
 
     public Rectangle(int length, int width) {
-        this.topLeft = new Point(0, -width);
-        this.bottomRight = new Point(length, 0);
+        this(0, -width, length, 0);
     }
 
     public Rectangle() {
-        this.topLeft = new Point(0, -1);
-        this.bottomRight = new Point(1, 0);
+        this(1, 1);
     }
 
     public Point getTopLeft() {
@@ -58,9 +57,6 @@ public class Rectangle {
         this.bottomRight = new Point(x + length, y + width);
     }
 
-    public void moveTo(Point point) {
-        moveTo(point.getX(), point.getY());
-    }
 
     public void moveRel(int dx, int dy) {
         this.topLeft = new Point(topLeft.getX() + dx, topLeft.getY() + dy);
@@ -130,11 +126,4 @@ public class Rectangle {
         return Objects.hash(topLeft, bottomRight);
     }
 
-    @Override
-    public String toString() {
-        return "Rectangle{" +
-                "topLeft=" + topLeft +
-                ", bottomRight=" + bottomRight +
-                '}';
-    }
 }

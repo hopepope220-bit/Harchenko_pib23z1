@@ -1,4 +1,4 @@
-package main.java.academy.tochkavhoda.introduction;
+package academy.tochkavhoda.introduction;
 
 public class ZeroSteps4 {
 

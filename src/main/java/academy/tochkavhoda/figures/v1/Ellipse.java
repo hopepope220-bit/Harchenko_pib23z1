@@ -1,6 +1,9 @@
-package main.java.academy.tochkavhoda.figures.v1;
+package academy.tochkavhoda.figures.v1;
 
-public class Ellipse {
+import academy.tochkavhoda.figures.v2.Figure;
+import academy.tochkavhoda.iface.v2.Stretchable;
+
+public class Ellipse extends Figure implements Stretchable {
     private Point center;
     private int xAxis;
     private int yAxis;
@@ -15,27 +18,15 @@ public class Ellipse {
     }
 
     public Ellipse(int xCenter, int yCenter, int xAxis, int yAxis) {
-        if (xAxis <= 0 || yAxis <= 0) {
-            throw new IllegalArgumentException("Axis sizes must be positive");
-        }
-        this.center = new Point(xCenter, yCenter);
-        this.xAxis = xAxis;
-        this.yAxis = yAxis;
+        this(new Point(xCenter, yCenter), xAxis, yAxis);
     }
 
     public Ellipse(int xAxis, int yAxis) {
-        if (xAxis <= 0 || yAxis <= 0) {
-            throw new IllegalArgumentException("Axis sizes must be positive");
-        }
-        this.center = new Point(0, 0);
-        this.xAxis = xAxis;
-        this.yAxis = yAxis;
+        this(new Point(0, 0), xAxis, yAxis);
     }
 
     public Ellipse() {
-        this.center = new Point(0, 0);
-        this.xAxis = 1;
-        this.yAxis = 1;
+        this(new Point(0, 0), 1, 1);
     }
 
     public Point getCenter() {
@@ -72,9 +63,6 @@ public class Ellipse {
         this.center = new Point(x, y);
     }
 
-    public void moveTo(Point point) {
-        moveTo(point.getX(), point.getY());
-    }
 
     public void moveRel(int dx, int dy) {
         this.center = new Point(center.getX() + dx, center.getY() + dy);
@@ -141,12 +129,6 @@ public class Ellipse {
         int xRight = center.getX() + xAxis / 2;
         int yBottom = center.getY() - yAxis / 2;
         return new Rectangle(xLeft, yTop, xRight, yBottom);
-    }
-
-    @Override
-    public String toString() {
-        return "Ellipse[center=(" + center.getX() + "," + center.getY() +
-                "), xAxis=" + xAxis + ", yAxis=" + yAxis + "]";
     }
 
     @Override

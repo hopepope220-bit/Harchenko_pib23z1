@@ -1,4 +1,4 @@
-package main.java.academy.tochkavhoda.figures.v1;
+package academy.tochkavhoda.figures.v1;
 
 public class CircleFactory {
     private static int circleCount = 0;

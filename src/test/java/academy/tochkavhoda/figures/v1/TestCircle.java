@@ -1,4 +1,4 @@
-package test.java.academy.tochkavhoda.figures.v1;
+package academy.tochkavhoda.figures.v1;
 
 import org.junit.jupiter.api.Test;
 
@@ -76,7 +76,7 @@ public class TestCircle {
                 () -> assertEquals(200, circle.getCenter().getY()),
                 () -> assertEquals(10, circle.getRadius())
         );
-        circle.moveTo(new Point(1100, 1200));
+        circle.moveTo(1100, 1200);
         assertAll(
                 () -> assertEquals(1100, circle.getCenter().getX()),
                 () -> assertEquals(1200, circle.getCenter().getY()),

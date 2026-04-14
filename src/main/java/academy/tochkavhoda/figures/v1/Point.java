@@ -1,6 +1,8 @@
-package main.java.academy.tochkavhoda.figures.v1;
+package academy.tochkavhoda.figures.v1;
 
-public class Point {
+import academy.tochkavhoda.iface.v2.Movable;
+
+public class Point implements Movable {
 
     private int x, y;
 

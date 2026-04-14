@@ -1,4 +1,4 @@
-package test.java.academy.tochkavhoda.figures.v1;
+package academy.tochkavhoda.figures.v1;
 
 import academy.tochkavhoda.figures.v1.Point;
 import org.junit.jupiter.api.Test;

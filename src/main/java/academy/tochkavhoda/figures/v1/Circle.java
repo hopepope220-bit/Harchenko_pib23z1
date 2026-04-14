@@ -1,4 +1,4 @@
-package main.java.academy.tochkavhoda.figures.v1;
+package academy.tochkavhoda.figures.v1;
 
 
 import java.util.Objects;
@@ -21,15 +21,11 @@ public class Circle {
     }
 
     public Circle() {
-        this(0, 0, 1);
+        this(1);
     }
 
     public void moveTo(int x, int y) {
         this.center = new Point(x, y);
-    }
-
-    public void moveTo(Point point) {
-        this.center = point;
     }
 
     public void moveRel(int dx, int dy) {
@@ -70,14 +66,6 @@ public class Circle {
         return radius;
     }
 
-    public int getXCenter() {
-        return center.getX();
-    }
-
-    public int getYCenter() {
-        return center.getY();
-    }
-
     public void setCenter(Point center) {
         this.center = center;
     }
@@ -88,14 +76,6 @@ public class Circle {
 
     public void setRadius(int radius) {
         this.radius = radius;
-    }
-
-    @Override
-    public String toString() {
-        return "Circle{" +
-                "center=" + center +
-                ", radius=" + radius +
-                '}';
     }
 
     @Override

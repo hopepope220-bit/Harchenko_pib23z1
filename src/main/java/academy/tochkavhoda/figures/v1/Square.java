@@ -1,8 +1,10 @@
-package main.java.academy.tochkavhoda.figures.v1;
+package academy.tochkavhoda.figures.v1;
+
+import academy.tochkavhoda.figures.v2.Figure;
 
 import java.util.Objects;
 
-public class Square {
+public class Square extends Figure {
     private Point topLeft;
     private int size;
 
@@ -15,24 +17,15 @@ public class Square {
     }
 
     public Square(int xLeft, int yTop, int size) {
-        if (size <= 0) {
-            throw new IllegalArgumentException("Size must be positive");
-        }
-        this.topLeft = new Point(xLeft, yTop);
-        this.size = size;
+        this(new Point(xLeft, yTop), size);
     }
 
     public Square(int size) {
-        if (size <= 0) {
-            throw new IllegalArgumentException("Size must be positive");
-        }
-        this.topLeft = new Point(0, -size);
-        this.size = size;
+        this(new Point(0, -size), size);
     }
 
     public Square() {
-        this.topLeft = new Point(0, -1);
-        this.size = 1;
+        this(new Point(0, -1), 1);
     }
 
     public Point getTopLeft() {
@@ -53,10 +46,6 @@ public class Square {
 
     public void moveTo(int x, int y) {
         this.topLeft = new Point(x, y);
-    }
-
-    public void moveTo(Point point) {
-        moveTo(point.getX(), point.getY());
     }
 
     public void moveRel(int dx, int dy) {
@@ -115,11 +104,4 @@ public class Square {
         return Objects.hash(topLeft, size);
     }
 
-    @Override
-    public String toString() {
-        return "Square{" +
-                "topLeft=" + topLeft +
-                ", size=" + size +
-                '}';
-    }
 }
